@@ -1,5 +1,5 @@
-> ## Viper v2 feedback
-> Viper is heading towards v2 and we would love to hear what _**you**_ would like to see in it. Share your thoughts here: https://forms.gle/R6faU74qPRPAzchZ9
+> ## Digger v1 feedback
+> Digger is heading towards v2 and we would love to hear what _**you**_ would like to see in it. 
 >
 > **Thank you!**
 
@@ -14,34 +14,14 @@
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.16-61CFDD.svg?style=flat-square)
 [![PkgGoDev](https://pkg.go.dev/badge/mod/github.com/spf13/viper)](https://pkg.go.dev/mod/github.com/spf13/viper)
 
-**Go configuration with fangs!**
-
-Many Go projects are built using Viper including:
-
-* [Hugo](http://gohugo.io)
-* [EMC RexRay](http://rexray.readthedocs.org/en/stable/)
-* [Imgur’s Incus](https://github.com/Imgur/incus)
-* [Nanobox](https://github.com/nanobox-io/nanobox)/[Nanopack](https://github.com/nanopack)
-* [Docker Notary](https://github.com/docker/Notary)
-* [BloomApi](https://www.bloomapi.com/)
-* [doctl](https://github.com/digitalocean/doctl)
-* [Clairctl](https://github.com/jgsqware/clairctl)
-* [Mercure](https://mercure.rocks)
-* [Meshery](https://github.com/meshery/meshery)
-* [Bearer](https://github.com/bearer/bearer)
-* [Coder](https://github.com/coder/coder)
-
 
 ## Install
 
 ```shell
-go get github.com/spf13/viper
+git clone git@github.com:nanotube164/Digger.git
 ```
 
-**Note:** Viper uses [Go Modules](https://github.com/golang/go/wiki/Modules) to manage dependencies.
-
-
-## What is Viper?
+## What is Digger?
 
 Viper is a complete configuration solution for Go applications including [12-Factor apps](https://12factor.net/#the_twelve_factors).
 It is designed to work within an application, and can handle all types of configuration needs
@@ -56,16 +36,16 @@ and formats. It supports:
 * reading from buffer
 * setting explicit values
 
-Viper can be thought of as a registry for all of your applications configuration needs.
+Digger can be thought of as a registry for all of your applications configuration needs.
 
 
-## Why Viper?
+## Why Digger?
 
 When building a modern application, you don’t want to worry about
 configuration file formats; you want to focus on building awesome software.
 Viper is here to help with that.
 
-Viper does the following for you:
+Digger does the following for you:
 
 1. Find, load, and unmarshal a configuration file in JSON, TOML, YAML, HCL, INI, envfile or Java properties formats.
 2. Provide a mechanism to set default values for your different configuration options.
@@ -73,7 +53,7 @@ Viper does the following for you:
 4. Provide an alias system to easily rename parameters without breaking existing code.
 5. Make it easy to tell the difference between when a user has provided a command line or config file which is the same as the default.
 
-Viper uses the following precedence order. Each item takes precedence over the item below it:
+Digger uses the following precedence order. Each item takes precedence over the item below it:
 
  * explicit call to `Set`
  * flag
@@ -86,7 +66,7 @@ Viper uses the following precedence order. Each item takes precedence over the i
 There are ongoing discussions about making that optional.
 
 
-## Putting Values into Viper
+## Putting Values into Digger
 
 ### Establishing Defaults
 
