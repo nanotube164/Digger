@@ -26,7 +26,7 @@ lan_arr1_tw = [
     '開始日期',
     '終點日期',
     "版本 1.0.0",
-    '下載'
+    "下載"
 
 ]
 lan_arr1_en = [
@@ -38,7 +38,7 @@ lan_arr1_en = [
     "Start Date",
     "End Date",
     "Version 1.0.0",
-    'Download'
+    "Download"
 ]
 
 
@@ -53,16 +53,15 @@ lan_arr1_en = [
 
 
 # Language
-lan = lan_arr1_en[0]
-descrip = lan_arr1_en[1]
-thx = lan_arr1_en[2]
-Copyright = lan_arr1_en[3]
-developer = lan_arr1_en[4]
-stdate = lan_arr1_en[5]       
-eddate = lan_arr1_en[6]
-version = lan_arr1_en[7]
-download = lan_arr1_en[8]
-
+lan = lan_arr1_tw[0]
+descrip = lan_arr1_tw[1]
+thx = lan_arr1_tw[2]
+Copyright = lan_arr1_tw[3]
+developer = lan_arr1_tw[4]
+stdate = lan_arr1_tw[5]       
+eddate = lan_arr1_tw[6]
+version = lan_arr1_tw[7]
+download = lan_arr1_tw[8]
 
 
 def open_url(event):
@@ -120,7 +119,7 @@ root.title('Digger.exe')
 root.geometry("600x410")
 header = Label(
         root,
-        text= 'Ver. 1.0.0',
+        text= version,
         width=600,
         justify=LEFT,
         bg='green')
@@ -131,8 +130,8 @@ G_gif = PhotoImage(file="logo.png")
 label = Label(root, text="Digger", image = G_gif,width=600,height=100, bg='white', compound='left', font=("simsun", 40))
 label.pack()
 
-descrip = lan_arr1_en[1]
-thx = lan_arr1_en[2]
+# descrip = lan_arr1_en[1]
+# thx = lan_arr1_en[2]
 
 dev_info = Label(
         root,
@@ -142,7 +141,7 @@ dev_info = Label(
         bg='white')
 dev_info.pack()
 
-lan = lan_arr1_tw[0]
+# lan = lan_arr1_tw[0]
 
 
 start_label = Label(root,text =  '\n' + stdate)
@@ -169,13 +168,13 @@ pick_end_datetime = DateEntry(root, selectmode = 'day',
 pick_end_datetime.pack()
 
 # Add Button and Label
-Button(root, text = "Execution",
+Button(root, text = download,
        command = exec).pack(pady = 20)
  
 date = Label(root, text = "")
 date.pack()
 
-Copyright = lan_arr1_en[3]
+# Copyright = lan_arr1_en[3]
 
 footer = Label(
         root,
@@ -185,7 +184,7 @@ footer = Label(
         bg='green')
 footer.pack()
 
-developer = lan_arr1_en[4]
+# developer = lan_arr1_en[4]
 
 link = Label(root, text= developer + "\n",bg='green',width=600)
 # link.place(x=540, y=430)
