@@ -1,5 +1,6 @@
 > ## Digger v1 feedback
 > Digger is heading towards v2 and we would love to hear what _**you**_ would like to see in it. 
+> Current only supports Formosa Chemistry Longte Factory
 >
 > **Thank you!**
 
@@ -16,7 +17,32 @@ git clone git@github.com:nanotube164/Digger.git
 
 ## What is Digger?
 
-Digger is a solution for collecting data from PI system including [22-Factor for MGGH](https://).
+Digger is a solution for collecting data from PI system including [22-Factor for MGGH]((https://www.scirp.org/journal/paperinformation.aspx?paperid=96324)).
+* 主汽量	
+* 再熱器出口煙溫控制	
+* 冷卻水塔濕球溫度	
+* 冷卻水塔乾球溫度	
+* MGGH取熱器入口煙溫A	
+* MGGH取熱器入口煙溫B	
+* MGGH取熱器出口煙溫A	
+* MGGH取熱器出口煙溫B	
+* MGGH再熱器入口煙溫A	
+* MGGH再熱器入口煙溫B	
+* MGGH再熱器出口煙溫A	
+* MGGH再熱器出口煙溫B	
+* MGGH取熱器入口水溫	
+* MGGH取熱器出口水溫	
+* MGGH再熱器入口水溫	
+* MGGH再熱器出口水溫	
+* MGGH熱媒水循環泵A台轉速	
+* MGGH凝結水取水水溫	
+* MGGH凝結水回水水溫	
+* MGGH鍋爐給水取水流量	
+* MGGH循環水流量	
+* 有無白煙
+
+
+
 It is designed to organize data into an excel from PI system, and can handle 22 critical parameter for MGGH needs.
 and formats. It supports:
 
