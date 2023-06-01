@@ -72,4 +72,4 @@ A: Sometimes we want to find out what is the connection between data with event.
 
 ## Connect
 
-Send email to [me](nicholas.cheng.1106@gmail.com)
+Send email to `nicholas.cheng.1106@gmail.com`
