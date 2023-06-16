@@ -27,7 +27,9 @@ def fill_in_excel_with_tag_value(tagname, excel_column, start_datetime, end_date
         fmt_record_datetime = datetime.strptime(record_datetime, date_format_str)
         fmt_record_datetime_to_string = str(fmt_record_datetime)
         isRecorded = PISystemCRUD.get_if_record(fmt_record_datetime_to_string, 999, doSmokeArray)
-        sheet[first_varible] = isRecorded
+        if isRecorded == None:
+            isRecorded = "nan"
+        sheet[first_varible] = str(isRecorded)
         record_datetime = str(fmt_record_datetime + timedelta(minutes=per_min_period))
         var_row = var_row + per_min_period
     

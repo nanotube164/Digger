@@ -8,7 +8,7 @@ from tkinter import ttk
 import tkinter as tk
 import openpyxl, time
 from pkg.parameter.mggh_parameter import mggh_parameter
-from pkg.parameter.tagnumber_pi import tagnumber_pi
+from pkg.parameter.tagnumber_pi import tagnumber_pi, tagnumber_pi_3
 from pkg.control_excel import fill_in_excel_with_tag_value, fill_in_excel_with_stamp, fill_in_excel_with_parameter
 from pkg.calculate_time import calculate_period
 from pkg.validation.validate_date import validate_date
@@ -69,9 +69,11 @@ def open_url(event):
     webbrowser.open("https://nicholascheng.netlify.app/", new=0)
 
 def exec():
+        show()
+        # print(box.get())
         dt = str(datetime.today())
         today_format = dt[0:10] + dt[10:13] +" "+ dt[14:16] +" " + dt[17:19] + "_"
-        excel_name = today_format + 'LT3_MGGH_merge.xlsx'
+        excel_name = today_format + box.get() + '_MGGH_merge.xlsx'
 
         sdate = str(pick_start_datetime.get_date())
         edate = str(pick_end_datetime.get_date())
@@ -103,9 +105,15 @@ def exec():
 
         fill_in_excel_with_stamp(mggh_parameter,sheet)
         fill_in_excel_with_parameter(start_datetime,period_minutes, sheet)
-        for item in range(len(tagnumber_pi)):
-            fill_in_excel_with_tag_value(tagnumber_pi[item], item + 1, start_datetime, end_datetime, period_minutes, sheet)
-            # time.sleep(1)
+
+        if box.get() == 'LT3':
+            for item in range(len(tagnumber_pi_3)):
+                fill_in_excel_with_tag_value(tagnumber_pi_3[item], item + 1, start_datetime, end_datetime, period_minutes, sheet)
+                # time.sleep(1)
+        elif box.get() == 'LT2':
+            for item in range(len(tagnumber_pi)):
+                fill_in_excel_with_tag_value(tagnumber_pi[item], item + 1, start_datetime, end_datetime, period_minutes, sheet)
+                # time.sleep(1)
         try:
             workbook.save(excel_name)
             date.config( text="Download complete!", width=600)
@@ -117,7 +125,7 @@ def exec():
 root = tk.Tk()
 root.title('Digger.exe')
 # Set geometry
-root.geometry("600x410")
+root.geometry("600x480")
 header = Label(
         root,
         text= 'Ver. 1.0.0',
@@ -144,6 +152,20 @@ dev_info.pack()
 
 lan = lan_arr1_tw[0]
 
+def show():
+    chimney.set(f'{box.current()}:{box.get()}')    # 顯示索引值與內容
+
+chimney = tk.StringVar()                           # 定義變數
+chimney.set('')
+
+# label = tk.Label(root, textvariable=a)       # 建立標籤，內容為變數
+# label.pack()
+
+box_label = Label(root,text =  '\n' + "Pick Chimney")
+box_label.pack()
+
+box = ttk.Combobox(root, values=['LT2','LT3'])
+box.pack()
 
 start_label = Label(root,text =  '\n' + stdate)
 start_label.pack()

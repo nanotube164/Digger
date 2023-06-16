@@ -68,9 +68,10 @@ def open_url(event):
     webbrowser.open("https://nicholascheng.netlify.app/", new=0)
 
 def exec():
+        show()
         dt = str(datetime.today())
         today_format = dt[0:10] + dt[10:13] +" "+ dt[14:16] +" " + dt[17:19] + "_"
-        excel_name = today_format + 'LT3_MGGH_merge.xlsx'
+        excel_name = today_format + box.get() + '_MGGH_merge.xlsx'
 
         sdate = str(pick_start_datetime.get_date())
         edate = str(pick_end_datetime.get_date())
@@ -107,7 +108,7 @@ def exec():
             # time.sleep(1)
         try:
             workbook.save(excel_name)
-            date.config( text="Download complete!", width=600)
+            date.config( text="下載完成!", width=600)
         except IOError:
             print("Please close Excel and rerun this program!")
 
@@ -116,7 +117,7 @@ def exec():
 root = tk.Tk()
 root.title('Digger.exe')
 # Set geometry
-root.geometry("600x410")
+root.geometry("600x480")
 header = Label(
         root,
         text= version,
@@ -142,6 +143,21 @@ dev_info = Label(
 dev_info.pack()
 
 # lan = lan_arr1_tw[0]
+
+def show():
+    chimney.set(f'{box.current()}:{box.get()}')    # 顯示索引值與內容
+
+chimney = tk.StringVar()                           # 定義變數
+chimney.set('')
+
+# label = tk.Label(root, textvariable=a)       # 建立標籤，內容為變數
+# label.pack()
+
+box_label = Label(root,text =  '\n' + "Pick Chimney")
+box_label.pack()
+
+box = ttk.Combobox(root, values=['LT2','LT3'])
+box.pack()
 
 
 start_label = Label(root,text =  '\n' + stdate)
